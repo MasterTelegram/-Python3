@@ -4,16 +4,16 @@ import iz_func
 import telebot
 
 # Remember to use your own values from my.telegram.org!
-api_id       = 192804
-api_hash     = '1b40d1d01f8922b384d44e29d32f6acf'
-phone_number = '+79033671563'   # Купинов Вадим
-#phone_number = '+79058839468'   # Юля 
+api_id       = XXXXX
+api_hash     = 'XXXXXXX'
+phone_number = '+XXXXXXXXXXX'   
+#phone_number = '+XXXXXXXXX'  
 print ('    [+] Пользователь:',phone_number)
 
 namebot = "@Help_client_bot" 
 token,about = iz_func.get_token (namebot)
 bot   = telebot.TeleBot(token) 
-user_id = '399838806'
+user_id = 'XXXXXXXXX'
 namebot = 'web' 
 
 def send_message_bot (message_out,catalog):
@@ -178,15 +178,15 @@ async def my_event_handler(event):
 
 
     ######################################################## Пересылка сообщения в бота ###########################################################
-    if phone_number == '+79033671563':
+    if phone_number == '+xxxxxxxxxx':
         message_in = event.message
         namebot = "@bb_cf_bot"
         #for grup in list_grup:
         #    receiver_id,sender_id = grup
-        if int(chat_id) == int('-1001338061911') or int(chat_id) == int('-1001491230343') :   ### Группа исходник тестовый 1С Криптобиржа
+        if int(chat_id) == int('-xxxxxx') or int(chat_id) == int('-xxxxxx') :   ### Группа исходник тестовый 1С Криптобиржа
         #if int(chat_id) == int('1274206412'):
             print ('        [+] Проверка на переадресацию. Берем из группы:',chat_id,", Отправляем в боту:",namebot)            
-            token = '1162451457:AAE2GGLzsWh2UXjHTn_CUayEyrWfpoFv60s'
+            token = 'xxxxxxxxxxx:xxxxxxxxxxxxxxx'
             bot   = telebot.TeleBot(token)
             
             message_out = raw_text
@@ -218,7 +218,7 @@ async def my_event_handler(event):
 
 
     ######################################################## Пересылка сообщения в группу ###########################################################
-    if phone_number == '+79033671563':
+    if phone_number == '+xxxxxxxxxxx':
         message_in = event.message
         for grup in list_grup:
             receiver_id,sender_id = grup
@@ -235,7 +235,7 @@ async def my_event_handler(event):
 
 
     ###################################################### Поиск контакта и отправка сообщения ######################################################
-    if phone_number == '+79033671563':
+    if phone_number == '+xxxxxxxx':
         db,cursor = iz_func.connect (namebot)
         try:
             label = 'No' 
@@ -258,7 +258,7 @@ async def my_event_handler(event):
 
 
     ############################################################ Стандартные ответы чата ############################################################
-    if phone_number == '+79033671563':
+    if phone_number == '+xxxxxxxx':
         if 'Привет' in raw_text:
             await event.reply('Добрый день !')
     else:
